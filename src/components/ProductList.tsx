@@ -7,16 +7,36 @@ const ProductList: React.FC<{ products: { name: string }[]; onDelete: (id: strin
 }) => {
   const columns = [
     {
-      title: 'Name',
+      title: '主图',
+      render(text, record){
+        return (
+          <div>
+            <img
+              width={272}
+              alt="logo"
+              src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
+            />
+          </div>
+        )
+      }
+    },
+    {
+      title: 'SN',
+      dataIndex: 'sn',
+    },    {
+      title: '名称',
       dataIndex: 'name',
     },
     {
       title: 'Actions',
       render(text, record) {
         return (
+          <>
+          <Button type="primary">编辑</Button>
           <Popconfirm title="Delete?" onConfirm={() => onDelete(record.id)}>
-            <Button>Delete</Button>
+            <Button>删除</Button>
           </Popconfirm>
+          </>
         );
       },
     },

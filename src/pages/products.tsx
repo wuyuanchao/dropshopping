@@ -22,7 +22,7 @@ export default function Page() {
   if (productsQuery.isLoading) return null;
   return (
     <div>
-      <h1 className={styles.title}>Page products</h1>
+      <h1 className={styles.title}>商品库</h1>
       <ProductList
         products={productsQuery.data.data}
         onDelete={(id) => {

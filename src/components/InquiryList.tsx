@@ -27,7 +27,13 @@ const InquiryList: React.FC<{ inquries: { name: string }[] }> = ({
       },
     },
   ];
-  return <Table rowKey="id" dataSource={inquries} columns={columns} />;
+  return (
+  <div>
+    <Button type="primary" style={{ marginBottom: 16 }}>
+        新增询价需求
+      </Button>
+    <Table rowKey="id" dataSource={inquries} columns={columns} />
+  </div>);
 };
 
 export default InquiryList;
